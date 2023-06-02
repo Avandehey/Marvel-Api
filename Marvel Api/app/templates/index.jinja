@@ -1,0 +1,30 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+<h2> Welcome {{ current_user.username }}</h2><br>
+<h3>Create your Marvel Character</h3><br>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.body(size=32) }}
+    </p>
+    <p>
+        {{ form.description.label }}<br>
+        {{ form.body(size=32) }}
+    </p>
+    <p>
+        {{ form.comics_appeared_in.label }}<br>
+        {{ form.body(size=32) }}
+    </p>
+    <p>
+        {{ form.super_power.label }}<br>
+        {{ form.body(size=32) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+
+{% endif %}
+{% endblock %}
