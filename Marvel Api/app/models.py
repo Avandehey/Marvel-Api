@@ -13,7 +13,7 @@ class User(UserMixin , db.Model):
     username = db.Column(db.String(60), unique=True)
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(200))
-    post = db.relationship('Post' , backref='author' , lazy=True)
+    marvel = db.relationship('Marvel' , backref='author' , lazy=True)
 
     def __repr__(self):
         return f'User: {self.username}'
